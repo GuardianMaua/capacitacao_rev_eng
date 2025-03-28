@@ -1,0 +1,15 @@
+section .text
+    global _start
+
+_start:
+    mov eax, 3
+    mov ecx, 3
+    mov ebx, 0
+
+loop1:
+    add ebx, eax  ;
+    loop loop1 ; 
+
+    mov eax, 1     ; syscall para exit
+    mov ebx, 0     ; código de saída 0
+    int 0x80       ; chamada de sistema
